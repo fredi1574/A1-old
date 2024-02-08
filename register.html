@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>site registeration</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>site registeration</h2>
+    <div class="container">
+      <form
+        class="registration-form"
+        action="/submit_registration_form"
+        method="post"
+      >
+        <label for="firstName">first name:</label><br />
+        <input type="text" id="firstName" name="firstName" required /><br />
+
+        <label for="lastName">last name:</label><br />
+        <input type="text" id="lastName" name="lastName" required /><br />
+
+        <label for="birthdate">Date of birth:</label><br />
+        <input type="date" id="birthdate" name="birthdate" required /><br />
+
+        <label for="gender">gender:</label><br />
+        <select id="gender" name="gender" required>
+          <option value="male">male</option>
+          <option value="female">female</option></select
+        ><br />
+
+        <label for="email">email:</label><br />
+        <input type="email" id="email" name="email" required /><br />
+
+        <label for="height">height (cm):</label><br />
+        <input type="number" id="height" name="height" required /><br />
+
+        <label for="password">password:</label><br />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+        /><br /><br />
+
+        <label for="password verification">password verification:</label><br />
+        <input
+          type="password verification"
+          id="password verification"
+          name="password verification"
+          required
+        /><br /><br />
+
+        <input type="submit" value="submit" />
+      </form>
+    </div>
+  </body>
+</html>
