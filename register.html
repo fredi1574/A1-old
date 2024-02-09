@@ -6,53 +6,72 @@
     <title>site registeration</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <h2>site registeration</h2>
-    <div class="container">
-      <form
-        class="registration-form"
-        action="/submit_registration_form"
-        method="post"
-      >
-        <label for="firstName">first name:</label><br />
-        <input type="text" id="firstName" name="firstName" required /><br />
+  <body class="h-full bg-gradient-to-b from-[#c5e0ff] to-[#92c1ff]">
+    <header
+      class="font-bold flex justify-between bg-blue-500 text-blue-200 drop-shadow-2xl p-3 mb-10"
+    >
+      <h1 class="text-3xl justify-center items-center">Registeration</h1>
+      <img
+        class="w-10 h-10 p-1 duration-200 hover:bg-blue-300 rounded-full"
+        src="/images/theme/sun.png"
+      />
+    </header>
+    <div class="container m-auto">
+      <form class="registration-form">
+        <input
+          type="text"
+          class="w-full my-2"
+          placeholder="first name"
+          required
+        />
+        <input
+          type="text"
+          class="w-full my-2"
+          placeholder="last name"
+          required
+        />
 
-        <label for="lastName">last name:</label><br />
-        <input type="text" id="lastName" name="lastName" required /><br />
+        <label for="birthdate">Date of birth:</label>
+        <input type="date" class="my-2" required />
 
-        <label for="birthdate">Date of birth:</label><br />
-        <input type="date" id="birthdate" name="birthdate" required /><br />
+        <input type="radio" class="m-1" name="gender" value="male" /> Male
+        <input type="radio" class="m-1" name="gender" value="female" /> Female
 
-        <label for="gender">gender:</label><br />
-        <select id="gender" name="gender" required>
-          <option value="male">male</option>
-          <option value="female">female</option></select
-        ><br />
-
-        <label for="email">email:</label><br />
-        <input type="email" id="email" name="email" required /><br />
-
-        <label for="height">height (cm):</label><br />
-        <input type="number" id="height" name="height" required /><br />
-
-        <label for="password">password:</label><br />
+        <input
+          type="number"
+          class="w-full my-2"
+          placeholder="Height"
+          required
+        />
+        <input
+          type="number"
+          class="w-full my-2"
+          placeholder="Weight"
+          required
+        />
+        <input type="email" class="w-full my-2" placeholder="Email" required />
         <input
           type="password"
-          id="password"
-          name="password"
+          class="w-full my-2"
+          placeholder="Password"
           required
-        /><br /><br />
-
-        <label for="password verification">password verification:</label><br />
+        />
         <input
-          type="password verification"
-          id="password verification"
-          name="password verification"
+          type="password"
+          class="w-full my-2"
+          placeholder="Password verification"
           required
-        /><br /><br />
+        />
 
-        <input type="submit" value="submit" />
+        <button class="w-full mt-4 bg-blue-400 rounded-md p-3" value="submit">
+          Register
+        </button>
       </form>
     </div>
+    <footer
+      class="text-center mt-10 fixed bottom-0 w-full bg-blue-400 text-white p-3"
+    >
+      &copy; 2024 to all rights reserved to Itzik
+    </footer>
   </body>
 </html>

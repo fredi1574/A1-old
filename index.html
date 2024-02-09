@@ -2,58 +2,67 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="images/titleIcon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Health Monitor</title>
-    <link rel="stylesheet" href="/style.css" />
-    <script type="module" src="/main.js"></script>
+    <title>Health Monitoring System - Login</title>
+    <link
+    href=https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
+    rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
   </head>
-  <body class="h-svh bg-gradient-to-b from-[#c5e0ff] to-[#92c1ff] select-none">
+  <body class="h-svh bg-gradient-to-b from-[#c5e0ff] to-[#92c1ff]">
     <header
-      class="font-bold flex justify-between items-center bg-blue-500 text-blue-200 drop-shadow-2xl p-3 mb-10"
+      class="font-bold flex justify-between bg-blue-500 text-blue-200 drop-shadow-2xl p-3 mb-10"
     >
-      <h1 class="text-2xl">Welcome, Itzik</h1>
-      <h1 class="text-3xl flex-grow-2">Health Monitor</h1>
+      <h1 class="text-2xl">Login</h1>
+      <h1 class="text-3xl justify-center items-center">Health Monitor</h1>
       <img
         class="w-10 h-10 p-1 duration-200 hover:bg-blue-300 rounded-full"
         src="/images/theme/sun.png"
       />
     </header>
-    <div
-      class="w-fit bg-gray-200 p-5 flex rounded-lg shadow-md m-auto items-center gap-3 text-center"
-    >
-      <button
-        class="bg-blue-400 rounded-md p-3 duration-200 hover:bg-blue-300 active:blur-sm"
-      >
-        <img class="w-20 h-20 object-contain" src="/images/bottle.png" />Water
-      </button>
-      <button
-        class="bg-blue-400 rounded-md p-3 duration-200 hover:bg-blue-300 active:blur-sm"
-      >
-        <img class="w-20 h-20" src="/images/scales.png" />Weight
-      </button>
-      <button
-        class="bg-blue-400 rounded-md p-3 duration-200 hover:bg-blue-300 active:blur-sm"
-      >
-        <img class="w-20 h-20" src="/images/running.png" />Activity
-      </button>
-      <button
-        class="bg-blue-400 rounded-md p-3 duration-200 hover:bg-blue-300 active:blur-sm"
-      >
-        <img class="w-20 h-20 object-contain" src="/images/sphygmo1.png" />Blood
-        pressure
-      </button>
-      <button
-        class="bg-blue-400 rounded-md p-3 duration-200 hover:bg-blue-300 active:blur-sm"
-      >
-        <img class="w-20 h-20 object-contain" src="/images/blood.png" />Blood
-        Glucose
-      </button>
-      <button
-        class="bg-blue-400 rounded-md p-3 duration-200 hover:bg-blue-300 active:blur-sm"
-      >
-        <img class="w-20 h-20" src="/images/alarm-clock.png" />Sleep
-      </button>
+    <div class="max-w-md mx-auto p-8 bg-white mt-10 rounded shadow-md">
+      <h1 class="text-2xl font-semibold mb-4">
+        Login to Health Monitoring System
+      </h1>
+
+      <div id="loginForm">
+        <label for="email" class="block text-gray-700 text-sm font-bold mb-2"
+          >Email:</label
+        >
+        <input
+          type="email"
+          id="email"
+          class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 mb-3"
+        />
+
+        <label for="password" class="block text-gray-700 text-sm font-bold mb-2"
+          >Password:</label
+        >
+        <input
+          type="password"
+          id="password"
+          class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 mb-4"
+        />
+
+        <button
+          onclick="login()"
+          class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Login
+        </button>
+        <p
+          class="flex items-center justify-center text-gray-700 text-sm font-bold mb-2"
+        >
+          new user?
+        </p>
+        <button
+          onclick="register()"
+          class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-1 rounded"
+        >
+          To register
+        </button>
+      </div>
     </div>
     <footer
       class="text-center mt-10 fixed bottom-0 w-full bg-blue-400 text-white p-3"
