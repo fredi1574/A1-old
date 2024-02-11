@@ -6,59 +6,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Health Monitor</title>
     <link rel="stylesheet" href="/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="/main.js" defer></script>
   </head>
   <body class="h-svh bg-gradient-to-b from-[#c5e0ff] to-[#92c1ff] select-none">
     <header
       class="font-bold flex justify-between bg-blue-500 text-blue-200 drop-shadow-2xl p-3 mb-10"
     >
-      <h1 class="text-2xl">Welcome, Itzik</h1>
-      <h1 class="text-3xl m-auto">Health Monitor</h1>
-      <img
-        class="w-10 h-10 p-1 duration-200 hover:bg-blue-300 rounded-full"
-        src="/images/theme/sun.png"
-      />
+      <a href="main.html" class="text-3xl justify-center items-center"
+        >Health Monitor</a
+      >
+      <div class="mt-2">
+        <button
+          class="text-lg px-4 border-x-2 border-blue-300 duration-200 hover:text-blue-300 active:text-blue-400"
+        >
+          Water intake
+        </button>
+        <button
+          class="text-lg px-4 border-r-2 border-blue-300 duration-200 hover:text-blue-300 active:text-blue-400"
+        >
+          Weight
+        </button>
+        <button
+          class="text-lg px-4 border-r-2 border-blue-300 duration-200 hover:text-blue-300 active:text-blue-400"
+        >
+          Sleep
+        </button>
+        <button
+          class="text-lg px-4 border-r-2 border-blue-300 duration-200 hover:text-blue-300 active:text-blue-400"
+        >
+          Activity
+        </button>
+        <button
+          class="text-lg px-4 border-r-2 border-blue-300 duration-200 hover:text-blue-300 active:text-blue-400"
+        >
+          Blood
+        </button>
+      </div>
+      <div class="flex">
+        <button
+          id="dropdownButton"
+          onclick="toggleMenu()"
+          class="text-2xl pr-2"
+        >
+          Itzik
+        </button>
+        <div id="dropdownMenu" class="hidden">
+          <a href="#">Profile</a>
+          <a href="#">Logout</a>
+        </div>
+        <img
+          class="w-10 h-10 p-1 duration-200 hover:bg-blue-300 rounded-full"
+          src="/images/theme/sun.png"
+        />
+      </div>
     </header>
-    <div
-      class="w-fit bg-gray-200 text-gray-200 p-5 flex rounded-lg shadow-md m-auto items-center gap-3 text-center"
-    >
-      <button
-        class="bg-blue-400 rounded-md p-3 duration-200 hover:bg-blue-300 active:blur-[2px]"
+    <div class="w-11/12 m-auto text-center grid grid-cols-2 gap-y-10">
+      <div
+        class="w-[70%] h-fit bg-[rgba(255,255,255,0.3)] m-[0_auto] rounded-lg drop-shadow-2xl hover:bg-[rgba(255,255,255,0.5)]"
       >
-        <img class="w-20 h-20 object-contain" src="/images/bottle.png" />Water
-      </button>
-      <button
-        class="bg-blue-400 rounded-md p-3 duration-200 hover:bg-blue-300 active:blur-[2px]"
+        <h1 class="m-auto text-2xl p-3 text-blue-500">Blood measurement</h1>
+        <canvas id="bloodChart" class="w-fit"></canvas>
+      </div>
+      <div
+        class="w-[70%] h-fit bg-[rgba(255,255,255,0.3)] m-[0_auto] rounded-lg drop-shadow-2xl hover:bg-[rgba(255,255,255,0.5)]"
       >
-        <img class="w-20 h-20" src="/images/scales.png" />Weight
-      </button>
-      <button
-        class="bg-blue-400 rounded-md p-3 duration-200 hover:bg-blue-300 active:blur-[2px]"
+        <h1 class="m-auto text-2xl p-3 text-blue-500">Sleep Tracker</h1>
+        <canvas id="sleepChart" class=""></canvas>
+      </div>
+      <div
+        class="w-[70%] bg-[rgba(255,255,255,0.3)] m-[0_auto] rounded-lg drop-shadow-2xl hover:bg-[rgba(255,255,255,0.5)]"
       >
-        <img class="w-20 h-20" src="/images/running.png" />Activity
-      </button>
-      <button
-        class="bg-blue-400 rounded-md p-3 duration-200 hover:bg-blue-300 active:blur-[2px]"
+        <h1 class="m-auto text-2xl p-3 text-blue-500">Water</h1>
+        <div class="flex">
+          <canvas id="waterChart" class="w-[90%] m-auto"></canvas>
+          <!-- <canvas id="activityChart" class="w-[25%]"></canvas> -->
+        </div>
+      </div>
+      <div
+        class="w-[70%] bg-[rgba(255,255,255,0.3)] m-[0_auto] rounded-lg drop-shadow-2xl hover:bg-[rgba(255,255,255,0.5)]"
       >
-        <img class="w-20 h-20 object-contain" src="/images/sphygmo1.png" />Blood
-        pressure
-      </button>
-      <button
-        class="bg-blue-400 rounded-md p-3 duration-200 hover:bg-blue-300 active:blur-[2px]"
-      >
-        <img class="w-20 h-20 object-contain" src="/images/blood.png" />Blood
-        Glucose
-      </button>
-      <button
-        class="bg-blue-400 rounded-md p-3 duration-200 hover:bg-blue-300 active:blur-[2px]"
-      >
-        <img class="w-20 h-20" src="/images/alarm-clock.png" />Sleep
-      </button>
+        <h1 class="m-auto text-2xl p-3 text-blue-500">Weight</h1>
+        <canvas id="weightChart" class="w-fit"></canvas>
+      </div>
     </div>
-    <footer
+    <!-- <footer
       class="text-center mt-10 fixed bottom-0 w-full bg-blue-400 text-white p-3"
     >
       &copy; 2024 to all rights reserved to Itzik
-    </footer>
+    </footer> -->
   </body>
 </html>
