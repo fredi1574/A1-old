@@ -105,10 +105,23 @@ const sleepingTimeChart = new Chart("sleepChart", {
   options: chartOptions,
 });
 
+const dates = [
+  "12.2.24",
+  "13.2.24",
+  "14.2.24",
+  "15.2.24",
+  "16.2.24",
+  "17.2.24",
+  "18.2.24",
+  "19.2.24",
+  "20.2.24",
+  "21.2.24",
+];
+
 new Chart("weightChart", {
   type: "line",
   data: {
-    labels: xValues,
+    labels: dates,
     datasets: [
       {
         data: [57, 56, 53, 52, 56, 57, 57, 58, 57, 55],
@@ -119,6 +132,17 @@ new Chart("weightChart", {
   },
   options: {
     legend: false,
+    scales: {
+      yAxes: [
+        {
+          display: true,
+          ticks: {
+            suggestedMin: 0,
+            suggestedMax: 150,
+          },
+        },
+      ],
+    },
   },
 });
 
