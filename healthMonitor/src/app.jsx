@@ -1,10 +1,16 @@
+import Header from "./components/Header";
 import Registration from "./components/Registration";
+import Card from "./components/main/Card";
 
 export function App() {
   return (
-    <header className="h-screen bg-gradient-to-b from-blue-700 to-slate-800 flex flex-col text-white p-20">
-      <h1 className="text-5xl font-bold text-center mb-2">Health Monitor</h1>
-      <Registration />
-    </header>
+    <div className="h-full min-h-[100vh] bg-[#D3FFE2] flex flex-col text-white">
+      <Header />
+      <Card />
+      {/* <Registration /> */}
+      {/* <footer className="text-center text-black p-4">
+        © 2024. All rights reserved.
+      </footer> */}
+    </div>
   );
 }
